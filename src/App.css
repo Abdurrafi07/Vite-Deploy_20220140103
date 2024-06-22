@@ -1,0 +1,43 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/Backg.jpg'); 
+  background-size: cover; /* Menutupi seluruh background */
+  background-position: center; /* Memusatkan gambar background */
+  opacity: 0.5; /* Mengatur transparansi untuk memberikan efek terang/putih */
+  z-index: -1; /* Menempatkan gambar di belakang konten */
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.animated-image {
+  width: 200px;
+  height: auto;
+  animation: move 5s infinite alternate;
+}
+
+@keyframes move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
